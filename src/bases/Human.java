@@ -17,8 +17,9 @@ public abstract class Human extends Living {
 		int num = Dice.get(1, 10);
 		// 相手のHPをダメージ値だけ減らす
 		int dmg = num * this.offensive;
+		target.hp = hp - this.offensive;
 		// 自分の攻撃力を1だけ減らす
-		System.out.println(this.offensive - 1);
+		this.offensive = this.offensive - 1;
 		// コンソールにステータスを表示
 		System.out.println(this.name + "が" + this.weapon + "で攻撃！" + target.name + "に" + dmg + "のダメージを与えた");
 		System.out.println("しかし自分の攻撃力も1減少した");
