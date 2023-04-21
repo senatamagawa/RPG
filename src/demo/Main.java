@@ -62,16 +62,14 @@ public class Main {
 			human.attack(monster);
 			// モンスターのHPが0以下になれば、モンスターは倒れ、そのモンスターをモンスターグループから削除
 			if(monster.getHp() <= 0) {
+				System.out.println(monster.getName() + "は倒れた");
 				monsters.remove(monsters.indexOf(monster));
-				System.out.println(monster + "は倒れた");
 			}
 			// モンスターグループに誰もいなくなれば、人間グループの勝利
-			if(monsters == null) {
+			if(monsters.isEmpty()) {
 				System.out.println("★★ ==== 決着がついた！！ ==== ★★");
 				System.out.println("#### 人間達は勝利した！！ ####");
 				break;
-			} else {
-				System.out.println("");
 			}
 			
 			System.out.println("\n[モンスターのターン！]\n");
@@ -84,16 +82,14 @@ public class Main {
 			monster.attack(human);			
 			// 人間のHPが0以下になれば、人間は倒れ、その人間をモンスターグループから削除
 			if(human.getHp() <= 0) {
+				System.out.println(human.getName() + "は倒れた");
 				humans.remove(humans.indexOf(human));
-				System.out.println(human + "は倒れた");
 			}
 			// 人間グループに誰もいなくなれば、人間グループの敗北
-			if(humans == null) {
+			if(humans.isEmpty()) {
 				System.out.println("★★ ==== 決着がついた！！ ==== ★★");
 				System.out.println("#### 人間達は敗北した,, ####");
 				break;
-			} else {
-				System.out.println("");
 			}
 			// 現在の各グループの状態を一覧表示
 			showGroupInfos(humans, monsters);

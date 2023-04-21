@@ -9,7 +9,7 @@ public class Brave extends Human {
 		//Humanクラスに定義したコンストラクタ
 		super(name, weapon);
 		//ヒットポイントの値は乱数を振って決定
-		hp = Dice.get(170,230);
+		this.hp = Dice.get(170,230);
 		//攻撃力の値は乱数を振って決定
 		this.offensive = Dice.get(7, 13);
 	}
